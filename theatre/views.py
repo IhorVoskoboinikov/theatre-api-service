@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from drf_spectacular.utils import extend_schema, OpenApiParameter
 from rest_framework import mixins, viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import GenericViewSet
@@ -103,6 +104,28 @@ class PlayViewSet(
 
         return PlaySerializer
 
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                "title",
+                type={"type": "list", "items": {"type": "string"}},
+                description=" Filter by title(ex. ?title='some string')",
+            ),
+            OpenApiParameter(
+                "genres",
+                type={"type": "list", "items": {"type": "number"}},
+                description=" Filter by genres(ex. ?genres=1,2)",
+            ),
+            OpenApiParameter(
+                "actors",
+                type={"type": "list", "items": {"type": "number"}},
+                description=" Filter by actors(ex. ?actors=1,2)",
+            ),
+        ]
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+
 
 class PerformanceViewSet(viewsets.ModelViewSet):
     queryset = (
@@ -143,6 +166,23 @@ class PerformanceViewSet(viewsets.ModelViewSet):
             return PerformanceDetailSerializer
 
         return PerformanceSerializer
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                "date",
+                type={"type": "list", "items": {"type": "date"}},
+                description=" Filter by date(ex. ?date=2024-10-08)",
+            ),
+            OpenApiParameter(
+                "play",
+                type={"type": "list", "items": {"type": "number"}},
+                description=" Filter by play id(ex. ?play=1)",
+            ),
+        ]
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
 
 
 class ReservationViewSet(
