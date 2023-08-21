@@ -20,7 +20,11 @@ class TheatreHallAdmin(admin.ModelAdmin):
 
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
-    fields = ("name", "rows", "seats_in_row",)
+    fields = (
+        "name",
+        "rows",
+        "seats_in_row",
+    )
     search_fields = ("name",)
     search_help_text = "Search by name"
     list_per_page = 20
@@ -28,7 +32,10 @@ class GenreAdmin(admin.ModelAdmin):
 
 @admin.register(Actor)
 class ActorAdmin(admin.ModelAdmin):
-    fields = ("first_name", "last_name",)
+    fields = (
+        "first_name",
+        "last_name",
+    )
     search_fields = ("first_name", "last_name")
     search_help_text = "Search by first name or last name"
     list_per_page = 20
@@ -44,7 +51,11 @@ class PlayAdmin(admin.ModelAdmin):
 
 @admin.register(Performance)
 class PerformanceAdmin(admin.ModelAdmin):
-    fields = ("play", "theatre_hall", "show_time",)
+    fields = (
+        "play",
+        "theatre_hall",
+        "show_time",
+    )
     search_fields = ("play",)
     search_help_text = "Search by play"
     list_per_page = 20
@@ -52,7 +63,10 @@ class PerformanceAdmin(admin.ModelAdmin):
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
-    fields = ("user", "created_at",)
+    fields = (
+        "user",
+        "created_at",
+    )
     search_fields = ("user",)
     search_help_text = "Search by user"
     list_per_page = 20
