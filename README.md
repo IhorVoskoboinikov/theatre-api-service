@@ -19,10 +19,10 @@ to reserve tickets for a play.
 1. Install Docker ( [Link](https://www.docker.com/products/docker-desktop/) ) if you don't have it installed
 2. Clone the project:
     + `git clone https://github.com/IhorVoskoboinikov/theatre-api-service`
-2. Add file .env (look for example in .env.sample):
-3. Create Docker images:
+3. Add file .env (look for example in .env.sample):
+4. Create Docker images:
     + `docker-compose build`
-4. Run app:
+5. Run app:
     + `docker-compose up`
 
 ## Usage (local):
