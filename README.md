@@ -3,37 +3,21 @@
 Theatre API Service (CRUD application) is an application that implements user interaction and the ability for the user
 to reserve tickets for a play.
 
-## Entities:
+## DB Structure:
+
+![Website Interface](DB Structure.PNG)
 
 1. User (Authenticated user with JWT authorization)
-    - Used for user authentication and authorization.
+2. CRUD operations with actor, genre, play, performance, theatre hall, reservation
+3. Checking reservations for rows and seats per play.
 
-2. TheatreHall
-    - Represents a theater hall with a specified number of rows and seats per row.
-
-3. Genre
-    - Represents a genre that can be associated with a play.
-
-4. Actor
-    - Represents an actor who can be associated with a play.
-
-5. Play
-    - Represents a theatrical play with a title, description, associated genres, and actors.
-
-6. Performance
-    - Represents a specific performance of a play in a theatre hall at a certain time.
-
-7. Reservation
-    - Represents a reservation made by a user for one or more tickets to a specific performance.
-
-8. Ticket
-    - Represents a ticket reserved as part of a reservation for a specific performance.
 
 ## Setup:
 
 ### Option with Docker:
 
-1. Clone the project:
+1. Install Docker ( [Link](https://www.docker.com/products/docker-desktop/) ) if you don't have it installed
+2. Clone the project:
     + `git clone https://github.com/IhorVoskoboinikov/theatre-api-service`
 2. Add file .env (look for example in .env.sample):
 3. Create Docker images:
