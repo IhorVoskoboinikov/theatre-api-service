@@ -5,7 +5,7 @@ to reserve tickets for a play.
 
 ## DB Structure:
 
-![Website Interface](DB Structure.PNG)
+![DB Structure](DB Structure.PNG)
 
 1. User (Authenticated user with JWT authorization)
 2. CRUD operations with actor, genre, play, performance, theatre hall, reservation
