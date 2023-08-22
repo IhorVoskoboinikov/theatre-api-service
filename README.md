@@ -11,7 +11,8 @@ to reserve tickets for a play.
 1. User (Authenticated user with JWT authorization)
 2. CRUD operations with actor, genre, play, performance, theatre hall, reservation
 3. Checking reservations for rows and seats per play.
-
+4. Utilization of Docker to create and deploy the application, 
+including a PostgreSQL database (via docker-compose.yml).
 
 ## Setup:
 
